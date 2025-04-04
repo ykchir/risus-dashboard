@@ -7,13 +7,17 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RISUS Dashboard",
-  description: "Dashboard for RISUS Dental Aligner System",
+  title: {
+    template: "%s | RISUS Dashboard",
+    default: "RISUS Dashboard",
+  },
+  description: "Dashboard application for risk management",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head />
       <body className={inter.className}>
         <Providers>
           <ThemeProvider

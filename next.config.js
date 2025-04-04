@@ -10,15 +10,10 @@ const nextConfig = {
   },
   // Optimisation de la compilation
   poweredByHeader: false,
-  // Désactiver le mode standalone qui cause l'erreur
-  // output: "standalone",
-  experimental: {
-    // Activer les options pour résoudre les problèmes de compilation
-    serverMinification: false,
-    turbotrace: {
-      logLevel: "error",
-      logAll: true,
-    },
+  // Résoudre les problèmes d'erreurs 500 sur les routes dynamiques en production
+  images: {
+    domains: ["localhost"],
+    unoptimized: true,
   },
   // Gérer les redirections proprement
   async redirects() {

@@ -15,6 +15,18 @@ export const metadata: Metadata = {
   description: "View patient details and treatment information",
 };
 
+// Générer les paramètres statiquement pour éviter les erreurs 500
+export async function generateStaticParams() {
+  // Récupérer tous les IDs des patients pour les pré-générer
+  return mockPatients.map((patient) => ({
+    id: patient.id,
+  }));
+}
+
+// Ajouter le mode Incremental Static Regeneration
+export const dynamic = "force-static";
+export const revalidate = 3600; // Revalider toutes les heures
+
 export default function PatientDetailsPage({ params }: { params: { id: string } }) {
   const patient = mockPatients.find((p) => p.id === params.id);
 
