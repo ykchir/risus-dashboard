@@ -35,7 +35,7 @@ export default function DashboardPage() {
     <div className="flex flex-col space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-gray-500">Welcome back, Dr. Yassine kchir</p>
+        <p className="text-gray-500">Welcome back, Dr. Yassine Kchir</p>
       </div>
 
       <Tabs defaultValue="overview">
