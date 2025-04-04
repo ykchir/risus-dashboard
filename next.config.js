@@ -10,7 +10,16 @@ const nextConfig = {
   },
   // Optimisation de la compilation
   poweredByHeader: false,
-  output: "standalone",
+  // Désactiver le mode standalone qui cause l'erreur
+  // output: "standalone",
+  experimental: {
+    // Activer les options pour résoudre les problèmes de compilation
+    serverMinification: false,
+    turbotrace: {
+      logLevel: "error",
+      logAll: true,
+    },
+  },
   // Gérer les redirections proprement
   async redirects() {
     return [
